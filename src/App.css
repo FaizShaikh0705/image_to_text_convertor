@@ -43,3 +43,12 @@ body {
     width: var(--container-width-lg);
     margin: 0 auto;
 }
+
+section > h2, section > h5 {
+  text-align: center;
+  color: #000;
+}
+
+section>h2 {
+  margin-bottom: 2rem;
+}

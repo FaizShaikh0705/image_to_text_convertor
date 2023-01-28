@@ -4,7 +4,13 @@ import { AiOutlineUserAdd } from 'react-icons/ai'
 import { FcAbout } from 'react-icons/fc'
 import { BiConversation } from 'react-icons/bi'
 import { AiFillContacts } from 'react-icons/ai'
-import IMG1 from '../../assets/logo1.png'
+import IMG1 from '../../assets/image11.jpeg'
+// import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+// import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const data = [
   {
@@ -39,27 +45,55 @@ const data = [
   }
 ]
 
-const Nav = () => {
+// const Nav = () => {
+//   return (
+//     <section id='navbar'>
+//       <nav className='container container_navbar'>
+//         <img src="" alt="logo_img" className="navbar_logo" />
+//         <ul className="container navbar_menu">
+//           {
+//             data.map(({ id, title, icon, url }) => {
+//               return (
+//                 <li key={id}>
+//                   <a href={url} className="navbar_menu-items">{icon}{title}</a>
+//                 </li>
+//               )
+//             })
+//           }
+//         </ul>
+//       </nav>
+//     </section>
+//   )
+// }
+
+
+
+
+function Navbr() {
   return (
-    <section className='navbar'>
-      <nav className='container container_navbar'>
-        <div>
-          <img src={IMG1} alt="logo_img" className="navbar_logo" />
-        </div>
-        <ul className="container navbar_menu">
+    <Navbar bg="light" expand="lg">
+      <Container fluid>
+        <Navbar.Brand href="#"><img src={IMG1} alt="logo_img" className='logo' /></Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+          >
+           
+          </Nav>
           {
             data.map(({ id, title, icon, url }) => {
               return (
-                <li key={id}>
-                  <a href={url} className="navbar_menu-items">{icon}{title}</a>
-                </li>
-              )
-            })
-          }
-        </ul>
-      </nav>
-    </section>
-  )
+          <Nav.Link key={id} href={url}>{icon}{title}</Nav.Link>
+          )
+                      })
+                    }
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
 
-export default Nav
+export default Navbr;

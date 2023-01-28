@@ -2,7 +2,9 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>About</div>
+<section>
+<h2>IMAGE TEXT CONVERTER</h2>
+</section>
   )
 }
 
