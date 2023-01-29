@@ -1,0 +1,25 @@
+.main_page {
+    background-color: #BFACE2;
+}
+
+.understand_head {
+    padding: 4rem 0 2rem;
+}
+
+.para_understand {
+    display: block;
+    text-align: left;
+}
+
+.para_head {
+    display: block;
+    text-align: left;
+}
+
+.para_understand li {
+    list-style: disc;
+}
+
+.main_page {
+    padding: 0 22rem 2rem;
+}

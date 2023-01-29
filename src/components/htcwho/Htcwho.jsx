@@ -34,8 +34,8 @@ const Htcwho = () => {
                 Everyone who creates content including content writers and books authors can use our image text converter in various ways. For instance, there’s some piece of information which is available in the form of an infographic but a content writer need it in textual form. In such a case, he/she can simply process the infographic through our tool and get its editable form within seconds. Likewise, the authors can convert scanned books nto editable form.
                 </p>
             </div>
-            <div className="who_me">
-                <img src={Asset6} alt="who_img" />
+            <div className="who_me1">
+                <img src={Asset6} alt="who_img1" />
             </div>
         </div>
     </section>

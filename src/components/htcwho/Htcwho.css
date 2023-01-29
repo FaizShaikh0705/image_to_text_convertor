@@ -1,11 +1,36 @@
 .htc-who_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5%;
 }
 .htc-who_container1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5%;  
+    margin-bottom: 2rem;
 }
 
+#htc__who h2 {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+#htc__who h3 {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.who_me img {
+    height: 80%;
+    width: 70%;
+    padding-top: 8rem;
+}
+
+.who_info {
+    display: block;
+    text-align: left;
+}
+
+.who_me1 img {
+    height: 90%;
+    width: 50%;
+    padding-top: 6rem;
+}
