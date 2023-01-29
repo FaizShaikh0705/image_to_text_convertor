@@ -1,10 +1,11 @@
 import React from 'react'
+import './Nav.css'
 import { FaHome } from 'react-icons/fa'
 import { AiOutlineUserAdd } from 'react-icons/ai'
 import { FcAbout } from 'react-icons/fc'
 import { BiConversation } from 'react-icons/bi'
 import { AiFillContacts } from 'react-icons/ai'
-import IMG1 from '../../assets/image11.jpeg'
+import IMG1 from '../../assets/logo3.png'
 // import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 // import Form from 'react-bootstrap/Form';
@@ -71,9 +72,11 @@ const data = [
 
 function Navbr() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#"><img src={IMG1} alt="logo_img" className='logo' /></Navbar.Brand>
+        <Navbar.Brand href="#">
+          <img src={IMG1} alt="logo_img" className='logo' />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav

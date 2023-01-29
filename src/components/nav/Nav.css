@@ -1,4 +1,15 @@
-.navbar-brand img {
-    height: 40px;
-    width: 40px;
+.navbar{
+    background-color: #C780FA;
 }
+
+/* .navbar .container {
+    margin: 0 2rem 0;
+} */
+
+img {
+    height: 70px;
+    width: 190px;
+}
+
+
+

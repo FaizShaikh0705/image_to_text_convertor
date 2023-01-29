@@ -1,0 +1,24 @@
+#htc h2 {
+    margin-top: 4rem;
+}
+
+.htc_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.htc__items {
+    background-color: #fff;
+    border-radius: 1rem;
+    border-color: 1px solid black;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;;
+}
+
+.htc__items-image img {
+    overflow: hidden;
+    height: 80px;
+    vertical-align: middle;
+    width: 80px;
+    margin: 0.8rem 0 1.8rem 0;
+}
