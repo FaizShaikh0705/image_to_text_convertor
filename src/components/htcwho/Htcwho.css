@@ -1,0 +1,11 @@
+.htc-who_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+}
+.htc-who_container1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;  
+}
+

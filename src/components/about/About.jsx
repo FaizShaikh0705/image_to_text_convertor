@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Htc from '../htc/Htc'
 import Htcwork from '../htcwork/Htcwork';
+import Htcwho from '../htcwho/Htcwho';
 
 const About = () => {
   return (
@@ -25,6 +26,7 @@ const About = () => {
 </Container>
 <Htc />
 <Htcwork />
+<Htcwho />
 </section>
   )
 }
