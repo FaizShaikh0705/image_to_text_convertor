@@ -15,7 +15,13 @@
     font-weight: 500;
 }
 
-.about-info p {
+.about_para {
     display: block;
+    text-align: start;
+    padding-left: 4rem;
+}
+
+.about-info {
+    margin: 0 10rem 4rem 30rem;
     
 }

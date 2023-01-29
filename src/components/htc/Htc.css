@@ -1,5 +1,11 @@
+#htc {
+    background-color: #32ded50f;
+    padding-top: 0.8rem;
+}
+
+
 #htc h2 {
-    margin-top: 4rem;
+    margin-top: 1rem;
 }
 
 .htc_container {
@@ -9,10 +15,12 @@
 }
 
 .htc__items {
-    background-color: #fff;
+    background-color: #32ded50f;
     border-radius: 1rem;
     border-color: 1px solid black;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    padding: 0 0.8rem 0.8rem;
+    margin-bottom: 2rem;
 }
 
 .htc__items-image img {
@@ -22,3 +30,5 @@
     width: 80px;
     margin: 0.8rem 0 1.8rem 0;
 }
+
+

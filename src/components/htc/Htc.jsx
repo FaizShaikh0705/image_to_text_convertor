@@ -37,24 +37,24 @@ const Htc = () => {
     <section id='htc'>
       <h2>How To Extract Text From Image?</h2>
       <h5>Follow these simple steps to convert any image into editable and searchable text file:</h5>
-    
 
-    <div className="container htc_container">
-      {
-        data.map(({ id, img, title, info}) => {
-          return (
-            <article key={id} className="htc__items">
-        <div className="htc__items-image">
-          <img src={img} alt={title} />
-        </div>
-        <h3>{title}</h3>
-        <p>{info}</p>
-      </article>
-          )
-        })
-      }
+
+      <div className="container htc_container">
+        {
+          data.map(({ id, img, title, info }) => {
+            return (
+              <article key={id} className="htc__items">
+                <div className="htc__items-image">
+                  <img src={img} alt={title} />
+                </div>
+                <h3>{title}</h3>
+                <p>{info}</p>
+              </article>
+            )
+          })
+        }
       </div>
-    </section>  
+    </section>
   )
 }
 
