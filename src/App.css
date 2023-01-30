@@ -52,3 +52,21 @@ section > h2, section > h5 {
 section>h2 {
   margin-bottom: 2rem;
 }
+
+.btns {
+  width: max-content;
+  display: inline-block;
+  color: #fff; 
+  background-color: transparent;
+  padding: 0.45rem 1.2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: var(--transition);
+}
+
+.btns:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+}

@@ -1,0 +1,19 @@
+#header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+}
+
+
+
+/* =====MEDIA QUERIES (MEDIUM DEVICES)====== */
+
+@media screen and (max-width: 1024px) {
+    
+}
+
+
+/* =====MEDIA QUERIES (SMALL DEVICES)====== */
+
+@media screen and (max-width: 600px) {}

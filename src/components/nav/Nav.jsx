@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Nav.css'
+import IMG1 from '../../assets/logo3.png'
+
+
+
 // import { FaHome } from 'react-icons/fa'
 // import { AiOutlineUserAdd } from 'react-icons/ai'
 // import { FcAbout } from 'react-icons/fc'
 // import { BiConversation } from 'react-icons/bi'
 // import { AiFillContacts } from 'react-icons/ai'
-import IMG1 from '../../assets/logo3.png'
 // import Button from 'react-bootstrap/Button';
 // import Container from 'react-bootstrap/Container';
 // import Form from 'react-bootstrap/Form';
 // import Nav from 'react-bootstrap/Nav';
 // import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
+
+
+
+// ===generating navbar Items from Array using map method===
 
 // const data = [
 //   {
@@ -99,14 +106,26 @@ import IMG1 from '../../assets/logo3.png'
 //   );
 // }
 
+
 const Nav = () => {
+
+const [color, setColor] = useState(false)
+const changeColor = () => {
+  if (window.scrollY >= 110) {
+    setColor(true)
+  } else {
+    setColor(false)
+  }
+}
+
+window.addEventListener('scroll', changeColor)
     return (
-      <header className='navbar1'>
+      <header className={color ? 'navbar1 navbar2' : 'navbar1'}>
         <img src={IMG1} alt="logo_img1" className='logo_img1'/>
         <div className="navbar_options">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
+          <ul className='navbar_menu'>
+            <li><a href="#" className='btns'>Home</a></li>
+            <li><a href="#about" className='btns'>About</a></li>
           </ul>
         </div>
       </header>

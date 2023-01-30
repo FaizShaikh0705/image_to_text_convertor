@@ -47,7 +47,8 @@ footer h5 {
 }
 
 .contact_1 {
-    font-weight: 500;
+    font-weight: 600;
+    margin-bottom: 2rem;
 }
 
 .footer__copyright {
@@ -56,3 +57,24 @@ footer h5 {
     padding-right: 6rem;
     margin-top: 2rem;
 }
+
+.contact_menu {
+    padding-top: 1rem;
+}
+
+.useful_option {
+    padding-top: 1rem;
+}
+
+.footer_info {
+    padding-top: 1rem;
+}
+
+/* =====MEDIA QUERIES (MEDIUM DEVICES)====== */
+
+@media screen and (max-width: 1024px) {}
+
+
+/* =====MEDIA QUERIES (SMALL DEVICES)====== */
+
+@media screen and (max-width: 600px) {}
