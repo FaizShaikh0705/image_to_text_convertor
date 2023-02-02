@@ -1,17 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Tesseract from 'tesseract.js';
 import './Header.css'
 import Nav from '../nav/Nav'
 import bg1 from '../../assets/bg2.jpg'
-// import {ReactToPdf} from 'react'
-// import { useState } from "react";
-// import { FileUploader } from "react-drag-drop-files";
+import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
 
 const Header = () => {
-    const [isLoading, setIsLoading] = React.useState(false);
-    const [image, setImage] = React.useState('');
-    const [text, setText] = React.useState('');
-    const [progress, setProgress] = React.useState(0);
+    const [isLoading, setIsLoading] = useState(false);
+    const [image, setImage] = useState('');
+    const [text, setText] = useState('');
+    const [progress, setProgress] = useState(0);
 
     const handleSubmit = () => {
         setIsLoading(true);
@@ -33,14 +32,18 @@ const Header = () => {
             });
     };
 
-    // ===drag and drop ===
-
-    // const fileTypes = ["JPEG", "PNG", "GIF"];
-    // const [file, setFile] = useState(null);
-    // const handleChange = (file) => {
-    //     setFile(file);
-    // };
-
+   const printDocument = () => {
+        const input = document.getElementById('divToPrint');
+        html2canvas(input)
+          .then((canvas) => {
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF();
+            pdf.addImage(imgData, 'JPEG', 0, 0);
+            // pdf.output('dataurlnewwindow');
+            pdf.save("download.pdf");
+          })
+        ;
+      }
 
     // ===pdf Download===
 
@@ -65,65 +68,48 @@ const Header = () => {
                         )}
                         {!isLoading && !text && (
                             <>
-                                {/* <div className="input_area" style={{ backgroundColor: '' }} > */}
+                                <div className="input_area" >
+                                    
+                                    <div className='drag-drop'>
                                     <input
                                         type="file"
                                         onChange={(e) =>
                                             setImage(URL.createObjectURL(e.target.files[0]))
                                         }
-                                        className="form-control mt-5 mb-2"
+                                        className="form-control file-drop mt-5 mb-2"
                                     />
-                                    <input
-                                        type="button"
+                                    <div className="drop-img">
+                                    <img src={`https://imagetextconverter.com/assets/img/upload.svg`} alt="drop" height="150px" style={{position: "relative"}}/>
+                                    <p className="text-black-50 position-relative">Drag &amp; Drop files here to upload
+                                    </p>
+                                    </div>
+                                    </div>
+                                    <button
                                         onClick={handleSubmit}
                                         className="btn btn-primary mt-5"
                                         value="Convert"
-                                    />
+                                    >Convert</button>
 
-
-                                      {/* ===drag and drop === */}
-
-
-                                    {/* <h1>Hello To Drag & Drop Files</h1>
-                                    <FileUploader
-                                        multiple={true}
-                                        handleChange={handleChange}
-                                        name="file"
-                                        types={fileTypes} 
-                                        onChange={(e) =>
-                                            setImage(URL.createObjectURL(e.target.files[0]))
-                                        }
-                                    />
-                                    <p>{file ? `File name: ${file[0].name}` : "no files uploaded yet"}</p>
-
-                                    <input
-                                    type="button"
-                                    onClick={handleSubmit}
-                                    className="btns1"
-                                    value="Convert"
-                                /> */}
-
-                                {/* </div> */}
+                                </div>
                             </>
                         )}
                         {!isLoading && text && (
                             <>
-                                <textarea
-                                    className="form-control w-100 mt-5"
-                                    rows="30"
-                                    value={text}
-                                    onChange={(e) => setText(e.target.value)}
-                                ></textarea>
-
-
-                                {/* <div>
-                                    <ReactToPdf targetRef={ref} filename="div-blue.pdf">
+                             {/* <ReactToPdf targetRef={ref} filename="div-blue.pdf">
                                         {({ toPdf }) => (
-                                            <button onClick={toPdf}>Generate pdf</button>
+                                            <> */}
+                                            <textarea
+                                                className="form-control w-100 mt-5"
+                                                rows="30"
+                                                value={text}
+                                                onChange={(e) => setText(e.target.value)}
+                                                id="divToPrint"
+                                            ></textarea>
+                                            <button onClick={printDocument} className="btn btn-primary mt-5">Generate pdf</button>
+                                            {/* </>
                                         )}
-                                    </ReactToPdf>
-                                    <div style={{ width: 500, height: 500, background: 'blue' }} ref={ref} />
-                                </div> */}
+                            </ReactToPdf> */}
+                            {/* <div style={{ width: 500, height: 500, background: 'blue' }} ref={ref} /> */}
                             </>
                         )}
 
