@@ -41,9 +41,32 @@ margin-top: 2rem;
 
 /* =====MEDIA QUERIES (MEDIUM DEVICES)====== */
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+    .htc-work__container {
+        grid-template-columns: 1fr;
+        margin: 0rem 5rem;
+    }
+    #htc-work h5{
+    padding: 0rem 5rem;
+    }
+}
 
 
 /* =====MEDIA QUERIES (SMALL DEVICES)====== */
 
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {
+    .htc-work__container {
+        grid-template-columns: 1fr;
+    }
+    #htc-work h5{
+        padding: 0rem 3rem;
+    }
+
+    #htc-work {
+        padding: 0;
+    }
+    
+    .htc-work__me {
+        margin-bottom: 2rem;
+    }
+}

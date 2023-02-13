@@ -18,10 +18,23 @@
 .about_para {
     display: block;
     text-align: start;
-    padding-left: 4rem;
+    padding-left: 15rem;
 }
 
 .about-info {
-    margin: 0 10rem 4rem 30rem;
-    
+    margin: 0 0 4rem 0;   
 }
+
+
+/* =====MEDIA QUERIES (MEDIUM DEVICES)====== */
+
+@media screen and (max-width: 1024px) {
+    .about_para {
+        padding-left: 3rem;
+    }
+}
+
+
+/* =====MEDIA QUERIES (SMALL DEVICES)====== */
+
+@media screen and (max-width: 600px) {}

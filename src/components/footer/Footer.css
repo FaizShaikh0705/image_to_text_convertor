@@ -72,9 +72,34 @@ footer h5 {
 
 /* =====MEDIA QUERIES (MEDIUM DEVICES)====== */
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+    .footer_main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer_3 {
+        padding-left: 3rem;
+    }
+
+    .footer_2 {
+        padding-left: 3rem;
+    }
+
+    .footer_2 ul {
+        text-align: start;
+    }
+}
 
 
 /* =====MEDIA QUERIES (SMALL DEVICES)====== */
 
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {
+    .footer_main {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__copyright {
+        text-align: center;
+        padding-left: 5.5rem;
+    }
+}

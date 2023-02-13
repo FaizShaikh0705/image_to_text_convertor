@@ -34,10 +34,26 @@
 
 /* =====MEDIA QUERIES (MEDIUM DEVICES)====== */
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+    .htc_container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
 
 /* =====MEDIA QUERIES (SMALL DEVICES)====== */
 
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {
+
+    .htc_container {
+        grid-template-columns: 1fr;
+        margin: 1rem 1rem;
+        padding: 1rem 1rem;
+    }
+
+     
+    .htc__items {
+        margin: 0rem 2rem;
+     }
+}
 

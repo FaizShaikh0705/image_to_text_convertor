@@ -1,11 +1,17 @@
 .htc-who_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin: 0rem 1rem;
+    padding: 0rem 0rem;
+    gap: 1rem;
 }
 .htc-who_container1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 2rem;
+    margin: 0rem 1rem;
+    padding: 0rem 0rem;
+    gap: 1rem;
 }
 
 #htc__who h2 {
@@ -36,11 +42,55 @@
 }
 
 
-/* =====MEDIA QUERIES (MEDIUM DEVICES)====== */
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+    .container{
+     grid-template-columns: 1fr;
+    }
+ 
+    .Who_about .Who_about1{
+     width: 50%;
+     margin: 2rem auto 4rem;
+    }
+    .Who_content .Who_content1 p {
+     margin: 1rem 0 1.5rem;
+    }
+    #htc__who {
+     padding-top: 3rem;
+ }
+   }
+   
+   
+   /* =====MEDIA QUERIES (SMALL DEVICES)====== */
+   
+   @media screen and (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+       }
 
+   .Who_about .Who_about1 {
+     width: 65%;
+     margin: 0 auto 3rem;
+   }
+ 
+   .Who_about .Who_about1 {
+     text-align: center;
+   }
+ 
+   .Who_about .Who_about1 p {
+     margin: 1.5rem 0;
+   }
+ 
+   #htc__who {
+     padding-top: 0;
+ }
 
-/* =====MEDIA QUERIES (SMALL DEVICES)====== */
+ .who_me1 img {
+    padding-top: 2rem;
+}
 
-@media screen and (max-width: 600px) {}
+#htc__who h2 {
+    padding-top: 4rem;
+    padding-bottom: 0rem;
+}
+       }

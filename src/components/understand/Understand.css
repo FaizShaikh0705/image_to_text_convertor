@@ -23,3 +23,20 @@
 .main_page {
     padding: 0 22rem 2rem;
 }
+
+/* =====MEDIA QUERIES (MEDIUM DEVICES)====== */
+
+@media screen and (max-width: 1024px) {
+    .understand_head {
+        padding: 4rem 0rem 2rem;
+    }
+
+    .main_page {
+        padding: 2rem 2rem 2rem;
+    }
+}
+
+
+/* =====MEDIA QUERIES (SMALL DEVICES)====== */
+
+@media screen and (max-width: 600px) {}

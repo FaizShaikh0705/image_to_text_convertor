@@ -32,22 +32,22 @@ const Header = () => {
             });
     };
 
-   const printDocument = () => {
-        const input = document.getElementById('divToPrint');
-        html2canvas(input)
-          .then((canvas) => {
-            const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF();
-            pdf.addImage(imgData, 'JPEG', 0, 0);
-            // pdf.output('dataurlnewwindow');
-            pdf.save("download.pdf");
-          })
-        ;
-      }
+//    const printDocument = () => {
+//         const input = document.getElementById('divToPrint');
+//         html2canvas(input)
+//           .then((canvas) => {
+//             const imgData = canvas.toDataURL('image/png');
+//             const pdf = new jsPDF();
+//             pdf.addImage(imgData, 'JPEG', 0, 0);
+//             // pdf.output('dataurlnewwindow');
+//             pdf.save("download.pdf");
+//           })
+//         ;
+//       }
 
     // ===pdf Download===
 
-    const ref = React.createRef();
+    // const ref = React.createRef();
 
     return (
         <section id='Header' style={{ backgroundImage: `url(${bg1})`, backgroundRepeat: "no-repeat", backgroundSize: 'cover', maxHeight: '100%' }}>
@@ -105,7 +105,7 @@ const Header = () => {
                                                 onChange={(e) => setText(e.target.value)}
                                                 id="divToPrint"
                                             ></textarea>
-                                            <button onClick={printDocument} className="btn btn-primary mt-5">Generate pdf</button>
+                                            {/* <button onClick={printDocument} className="btn btn-primary mt-5">Generate pdf</button> */}
                                             {/* </>
                                         )}
                             </ReactToPdf> */}
