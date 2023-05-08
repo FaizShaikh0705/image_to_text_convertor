@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Tesseract from 'tesseract.js';
 import './Header.css'
 import Nav from '../nav/Nav'
@@ -6,11 +6,14 @@ import bg1 from '../../assets/bg2.jpg'
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
 
+
 const Header = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [image, setImage] = useState('');
     const [text, setText] = useState('');
     const [progress, setProgress] = useState(0);
+    const [linkText, setLinkText] = useState('');
+
 
     const handleSubmit = () => {
         setIsLoading(true);
@@ -29,21 +32,37 @@ const Header = () => {
                 console.log(result.data);
                 setText(result.data.text);
                 setIsLoading(false);
+                findLinkText(result.data.text);
             });
     };
+   
 
-//    const printDocument = () => {
-//         const input = document.getElementById('divToPrint');
-//         html2canvas(input)
-//           .then((canvas) => {
-//             const imgData = canvas.toDataURL('image/png');
-//             const pdf = new jsPDF();
-//             pdf.addImage(imgData, 'JPEG', 0, 0);
-//             // pdf.output('dataurlnewwindow');
-//             pdf.save("download.pdf");
-//           })
-//         ;
-//       }
+    const findLinkText = (text) => {
+        const regex = /(https?:\/\/[^\s]+)/g;
+        const matches = text.match(regex);
+        if (matches && matches.length > 0) {
+            const linkText = matches[0];
+            setLinkText(linkText);
+            const encodedText = encodeURIComponent(text);
+            return `https://www.google.com/search?q=${encodedText}`;
+        } else {
+            setLinkText('');
+        }
+    };
+
+
+    //    const printDocument = () => {
+    //         const input = document.getElementById('divToPrint');
+    //         html2canvas(input)
+    //           .then((canvas) => {
+    //             const imgData = canvas.toDataURL('image/png');
+    //             const pdf = new jsPDF();
+    //             pdf.addImage(imgData, 'JPEG', 0, 0);
+    //             // pdf.output('dataurlnewwindow');
+    //             pdf.save("download.pdf");
+    //           })
+    //         ;
+    //       }
 
     // ===pdf Download===
 
@@ -69,20 +88,20 @@ const Header = () => {
                         {!isLoading && !text && (
                             <>
                                 <div className="input_area" >
-                                    
+
                                     <div className='drag-drop'>
-                                    <input
-                                        type="file"
-                                        onChange={(e) =>
-                                            setImage(URL.createObjectURL(e.target.files[0]))
-                                        }
-                                        className="form-control file-drop mt-5 mb-2"
-                                    />
-                                    <div className="drop-img">
-                                    <img src={`https://imagetextconverter.com/assets/img/upload.svg`} alt="drop" height="150px" style={{position: "relative"}}/>
-                                    <p className="text-black-50 position-relative">Drag &amp; Drop files here to upload
-                                    </p>
-                                    </div>
+                                        <input
+                                            type="file"
+                                            onChange={(e) =>
+                                                setImage(URL.createObjectURL(e.target.files[0]))
+                                            }
+                                            className="form-control file-drop mt-5 mb-2"
+                                        />
+                                        <div className="drop-img">
+                                            <img src={`https://imagetextconverter.com/assets/img/upload.svg`} alt="drop" height="150px" style={{ position: "relative" }} />
+                                            <p className="text-black-50 position-relative">Drag &amp; Drop files here to upload
+                                            </p>
+                                        </div>
                                     </div>
                                     <button
                                         onClick={handleSubmit}
@@ -95,31 +114,37 @@ const Header = () => {
                         )}
                         {!isLoading && text && (
                             <>
-                             {/* <ReactToPdf targetRef={ref} filename="div-blue.pdf">
+                                {/* <ReactToPdf targetRef={ref} filename="div-blue.pdf">
                                         {({ toPdf }) => (
                                             <> */}
-                                            <textarea
-                                                className="form-control w-100 mt-5"
-                                                rows="30"
-                                                value={text}
-                                                onChange={(e) => setText(e.target.value)}
-                                                id="divToPrint"
-                                            ></textarea>
-                                            {/* <button onClick={printDocument} className="btn btn-primary mt-5">Generate pdf</button> */}
-                                            {/* </>
+                                <textarea
+                                    className="form-control w-100 mt-5"
+                                    rows="30"
+                                    value={text}
+                                    onChange={(e) => setText(e.target.value)}
+                                    id="divToPrint"
+                                ></textarea>
+                                 {linkText && (
+                                        <div>
+                                            <h3>Link Found:</h3>
+                                            <a href={linkText} target="_blank" rel="noopener noreferrer">
+                                                {linkText}
+                                            </a>
+                                        </div>
+                                    )}
+                                {/* <button onClick={printDocument} className="btn btn-primary mt-5">Generate pdf</button> */}
+                                {/* </>
                                         )}
                             </ReactToPdf> */}
-                            {/* <div style={{ width: 500, height: 500, background: 'blue' }} ref={ref} /> */}
+                                {/* <div style={{ width: 500, height: 500, background: 'blue' }} ref={ref} /> */}
                             </>
                         )}
+
 
                     </div>
                 </div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,160L48,133.3C96,107,192,53,288,74.7C384,96,480,192,576,213.3C672,235,768,181,864,160C960,139,1056,149,1152,170.7C1248,192,1344,224,1392,240L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-
-
-
         </section>
     );
 
