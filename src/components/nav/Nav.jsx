@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Nav.css'
 import IMG1 from '../../assets/logo3.png'
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -91,7 +92,7 @@ import IMG1 from '../../assets/logo3.png'
 //             style={{ maxHeight: '100px' }}
 //             navbarScroll
 //           >
-           
+
 //           </Nav>
 //           {
 //             data.map(({ id, title, icon, url }) => {
@@ -109,27 +110,36 @@ import IMG1 from '../../assets/logo3.png'
 
 const Nav = () => {
 
-const [color, setColor] = useState(false)
-const changeColor = () => {
-  if (window.scrollY >= 110) {
-    setColor(true)
-  } else {
-    setColor(false)
-  }
-}
+  const { i18n } = useTranslation();
 
-window.addEventListener('scroll', changeColor)
-    return (
-      <header className={color ? 'navbar1 navbar2' : 'navbar1'}>
-        <img src={IMG1} alt="logo_img1" className='logo_img1'/>
-        <div className="navbar_options">
-          <ul className='navbar_menu'>
-            <li><a href="#" className='btns'>Home</a></li>
-            <li><a href="#about" className='btns'>About</a></li>
-          </ul>
-        </div>
-      </header>
-    )
+  const changeLanguage = (lng) => {
+    i18n.language = lng;
+  };
+
+  const [color, setColor] = useState(false)
+  const changeColor = () => {
+    if (window.scrollY >= 110) {
+      setColor(true)
+    } else {
+      setColor(false)
+    }
+  }
+
+  window.addEventListener('scroll', changeColor)
+  return (
+    <header className={color ? 'navbar1 navbar2' : 'navbar1'}>
+      <img src={IMG1} alt="logo_img1" className='logo_img1' />
+      <div className="navbar_options">
+        <ul className='navbar_menu'>
+          <li><a href="#" className='btns'>Home</a></li>
+          <li><a href="#about" className='btns'>About</a></li>
+          <li><a onClick={() => changeLanguage('en')} className='btns'>English</a></li>
+          <li><a onClick={() => changeLanguage('fr')} className='btns'>French</a></li>
+          {/* Add more language buttons as needed */}
+        </ul>
+      </div>
+    </header>
+  )
 }
 
 export default Nav;

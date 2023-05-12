@@ -3,6 +3,7 @@ import './Htc.css'
 import Asset1 from '../../assets/Asset1.png'
 import Asset2 from '../../assets/Asset2.png'
 import Asset3 from '../../assets/Asset3.png'
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -33,10 +34,14 @@ const data = [
 ]
 
 const Htc = () => {
+
+     
+  const { t } = useTranslation();
+
   return (
     <section id='htc'>
-      <h2>How To Extract Text From Image?</h2>
-      <h5>Follow these simple steps to convert any image into editable and searchable text file:</h5>
+      <h2>{t('How To Extract Text From Image?')}</h2>
+      <h5>{t('Follow these simple steps to convert any image into editable and searchable text file:')}</h5>
 
 
       <div className="container htc_container">
@@ -67,8 +72,8 @@ const Htc = () => {
   <div className="container">
     <div className="row">
       <div className='col-xl-10 mx-auto text-center'>
-        <h2>How To Extract Text From Image?</h2>
-        <h5>Follow these simple steps to convert any image into editable and searchable text file:</h5>
+        <h2>{t('How To Extract Text From Image?')}</h2>
+        <h5>{t('Follow these simple steps to convert any image into editable and searchable text file:')}</h5>
 
         {
           data.map(({ id, img, title, info}) => {
